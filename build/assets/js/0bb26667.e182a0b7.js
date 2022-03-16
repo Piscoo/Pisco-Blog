@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpisco_blog=self.webpackChunkpisco_blog||[]).push([[7754],{4514:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/pisco","name":"Pisco","count":1,"permalink":"/blog/tags/pisco"}')}}]);
