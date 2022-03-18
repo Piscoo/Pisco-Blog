@@ -7,14 +7,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "Pisco's Blog",
-    tagline: 'Welcome to my website!',
+    tagline: 'Welcome to my playground!',
     url: 'https://github.com/Piscoo',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'Pisco', // Usually your GitHub org/user name.
-    projectName: "Pisco's Blog", // Usually your repo name.
+    projectName: "Pisco-Blog", // Usually your repo name.
 
     presets: [
         [
@@ -24,12 +24,12 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -51,7 +51,7 @@ const config = {
                     type: 'doc',
                     docId: 'intro',
                     position: 'right',
-                    label: 'Tutorial',
+                    label: 'Level Up',
                 },
                 {
                     label: 'Blog',
@@ -68,9 +68,9 @@ const config = {
         footer: {
             style: 'dark',
             links: [{
-                    title: 'Docs',
+                    title: 'Level Up',
                     items: [{
-                        label: 'Tutorial',
+                        label: 'Level Up',
                         to: '/docs/intro',
                     }, ],
                 },
@@ -96,7 +96,9 @@ const config = {
             darkTheme: darkCodeTheme,
         },
     }),
-    plugins: ['docusaurus-plugin-sass']
+    plugins: [
+        'docusaurus-plugin-sass',
+    ],
 };
 
 module.exports = config;
