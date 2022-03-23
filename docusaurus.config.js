@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: "Pisco's Blog",
     tagline: 'Welcome to my playground!',
-    url: 'https://github.com/Piscoo',
+    url: 'https://github.com/Piscoo/Pisco-Blog',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -60,7 +60,7 @@ const config = {
                 },
                 {
                     label: 'GitHub',
-                    href: 'https://github.com/Piscoo',
+                    href: 'https://github.com/Piscoo/Pisco-Blog',
                     position: 'right',
                 },
             ],
@@ -85,7 +85,7 @@ const config = {
                     title: 'More',
                     items: [{
                         label: 'GitHub',
-                        href: 'https://github.com/Piscoo',
+                        href: 'https://github.com/Piscoo/Pisco-Blog',
                     }, ],
                 },
             ],
