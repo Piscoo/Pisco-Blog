@@ -6,6 +6,7 @@ tags: [RegExp]
 ---
 
 ![RegEx](/img/regex.jpeg)
+
 <!--truncate-->
 
 ## 校验数字的表达式
