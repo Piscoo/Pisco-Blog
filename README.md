@@ -1,6 +1,6 @@
 # Website
 
-站点使用 静态网站生成器 [Docusaurus 2](https://docusaurus.io/)  搭建，借助 [Vercel](https://vercel.com/home) 部署。
+本网站使用静态站点生成器 [Docusaurus 2](https://docusaurus.io/)  搭建，借助 [Vercel](https://vercel.com/home) 部署。
 用于记录一些前端学习进阶的知识点以及将平时看到的或遇到的难题及解题方法整理成博客。
 无后台代码，待能力上去了可能考虑增加。
 
