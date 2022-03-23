@@ -1,6 +1,13 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+站点使用 静态网站生成器 [Docusaurus 2](https://docusaurus.io/)  搭建，借助 [Vercel](https://vercel.com/home) 部署。
+用于记录一些前端学习进阶的知识点以及将平时看到的或遇到的难题及解题方法整理成博客。
+无后台代码，待能力上去了可能考虑增加。
+
+##  博客地址
+
+- 线上地址：[Pisco](https://pisco-blog.vercel.app/)
+- 代码仓库：[GitHub](https://github.com/Piscoo/Pisco-Blog)
 
 ### Installation
 
@@ -16,33 +23,3 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
-
-
-###  博客地址
-[Pisco](https://pisco-blog.vercel.app/)
-
-### GitHub地址
-[GitHub](https://github.com/Piscoo/Pisco-Blog)
