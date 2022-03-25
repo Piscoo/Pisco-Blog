@@ -1,0 +1,86 @@
+---
+sidebar_position: 2
+---
+# TypeScript 使用细节
+
+> 记录一些在使用 TypeScript 过程中需要注意的细节或者一些能够避免出问题的小技巧，提供解决问题的思路
+
+### 函数重载
+-----
+**TypeScript 提供函数重载的功能，用来处理因函数参数不同而返回类型不同的使用场景，使用时，只需为同一个函数定义多个类型即可。**
+简单使用示例：
+```ts
+declare function test(a: number): number;
+declare function test(a: string): string;
+
+const resN = test(25); // 被推断出类型为number
+const resS = test("hello"); // 被推断出类型为string
+```
+
+**也适用于参数不同，返回值类型相同的场景，我们只需要知道在哪种函数类型定义下能够使用哪些参数即可。**
+比如：
+```ts
+interface User {
+	name: string;
+	age: number;
+}
+declare function test(para: User | number, flag?: boolean): number;
+```
+在这个 `test` 函数里，我们的本意可能是当传入参数 `para` 是 `User` 时，不传 `flag` ，当传入 `number` 时，也要传 `flag` 。TypeScript 并不知道这些，当你传入 `para` 为 `User` 时，`flag` 同样允许传入：
+```ts
+const user = {
+	name: 'Pisco';
+	age: 25
+};
+
+// 没报错，但和初始想法不一致
+const res = test(user, true);
+```	
+这个时候，使用函数重载就能够帮我们达到目的：
+```ts
+interface User {
+	name: string;
+	age: number;
+}
+declare function test(para: User): number;
+declare function test(para: number, flag: boolean): number;
+const user = {
+	name: 'Pisco';
+	age: 25
+};
+// correct
+const res1 = test(user);
+const res2 = test(25, true);
+// Error: 参数不匹配
+const res3 = test(user, false);
+const res4 = test(34);
+```
+
+在实际项目中，可能要多写几步：
+```ts
+interface User {
+	name: string;
+	age: number;
+}
+const user = {
+	name: "Pisco";
+	age: 25
+};
+
+class testClass {
+	public test(para: User): number;
+	public test(para: number, flag: boolean): number;
+	public test(para: User | number, flag?: boolean): number {
+		return 123;
+	}
+}
+const someClass = new testClass();
+
+// correct
+someClass.test(user);
+someClass.test(123, false);
+
+// error
+someClass.test(123);
+someClass.test(user, false);
+```
